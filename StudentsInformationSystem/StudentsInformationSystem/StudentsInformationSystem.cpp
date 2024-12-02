@@ -3,9 +3,42 @@
 
 #include <iostream>
 
+using namespace std;
+
+enum Gender
+{
+    Female = 0,
+    Male = 1
+};
+
+enum Status 
+{
+    Active,
+    Dropout,
+    Graduated
+};
+
+struct Subject
+{
+    string Name;
+    int Grade;
+};
+
+struct Student 
+{
+    char FacultyNumber[8];
+    char EGN[10];
+    string FirstName;
+    string MiddleName;
+    string LastName;
+    Gender gender;
+    Status status;
+    Subject subjects[5];
+};
+
 int main()
 {
-    std::cout << "Hello World!\n";
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
