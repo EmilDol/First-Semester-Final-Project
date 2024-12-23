@@ -54,7 +54,6 @@ void importStudents(Student students[30], unsigned short& studentsCount) {
 		return;
 	}
 
-	studentsCount = 0;
 	while (inFile.read(students[studentsCount].facultyNumber, sizeof(students[studentsCount].facultyNumber))) {
 		inFile.read(students[studentsCount].EGN, sizeof(students[studentsCount].EGN));
 
@@ -78,7 +77,7 @@ void importStudents(Student students[30], unsigned short& studentsCount) {
 		}
 
 		studentsCount++;
-		if (studentsCount >= 30) break; // Prevent overflow
+		if (studentsCount >= 30) break;
 	}
 
 	inFile.close();
@@ -385,5 +384,7 @@ int main()
 {
 	Student students[30];
 	unsigned short studentsCount = 0;
+	importStudents(students, studentsCount);
 	mainMenu(students, studentsCount);
+	exportStudents(students, studentsCount);
 }
